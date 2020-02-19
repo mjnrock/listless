@@ -55,7 +55,7 @@ export default class App extends Lux.React.ObserverComponent {
                     { this.context.$().GetTotalTime(true) }
                 </Text>
                 <Text style={ styles.task }>
-                    { (this.context.$("GetTotalTime") / 1000).toString().toHHMMSS() }
+                    { (this.context.$("GetTotalTime") / 1000) }
                 </Text>
             </View>
         );
