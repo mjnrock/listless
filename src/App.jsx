@@ -43,10 +43,10 @@ export default class App extends Lux.React.ObserverComponent {
                 
                 setTimeout(() => {
                     t1.StopTime();
-                    t1.StartTime();
+                    // t1.StartTime();
 
-                    t1.BeginLoop();
-                    console.log(this.context.$().Timer.Sprints);
+                    // t1.BeginLoop();
+                    // console.log(this.context.$().Timer.Sprints);
                 }, 350);
             }, 300);
         }, 250);
@@ -54,7 +54,7 @@ export default class App extends Lux.React.ObserverComponent {
 
     render() {
         const sprints = Lux.Core.Helper.A2OA(this.context.$().Timer.Sprints, "value");
-        
+
         return (
             <View style={ styles.container }>
                 <View style={ styles.container }>
