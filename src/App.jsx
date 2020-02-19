@@ -24,6 +24,12 @@ export default class App extends Lux.React.ObserverComponent {
     componentDidMount() {
         super.componentDidMount();
 
+        console.log({
+            Context: this.context.UUID(),
+            Subject: this.context.$().UUID(),
+        });
+        console.log(this.context);
+
         // setInterval(() => this.forceUpdate(), 500);
 
         // t1.StartTime();
@@ -49,7 +55,13 @@ export default class App extends Lux.React.ObserverComponent {
         return (
             <View style={ styles.container }>
                 <Text style={ styles.task }>
+                    { Lux.Core.Helper.StringifyCyclic(this.context, 2) }
+                </Text>
+                <Text style={ styles.task }>
                     { Lux.Core.Helper.StringifyCyclic(this.context.$(), 2) }
+                </Text>
+                <Text style={ styles.task }>
+                    { Lux.Core.Helper.StringifyCyclic(this.context.$().Timer, 2) }
                 </Text>
                 <Text style={ styles.task }>
                     { this.context.$().GetTotalTime(true) }

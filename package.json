@@ -10,7 +10,7 @@
     "build-web": "react-scripts build"
   },
   "dependencies": {
-    "@lespantsfancy/lux": "^0.3.33",
+    "@lespantsfancy/lux": "^0.3.39",
     "expo": "~36.0.0",
     "react": "~16.9.0",
     "react-art": "^16.12.0",

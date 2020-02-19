@@ -1154,10 +1154,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@lespantsfancy/lux@^0.3.33":
-  version "0.3.33"
-  resolved "https://registry.yarnpkg.com/@lespantsfancy/lux/-/lux-0.3.33.tgz#816f6cff483fe3573d931d0ece04f3de6f027355"
-  integrity sha512-73F/xkdX44mI9gOjAbdBEEKCYhor/5AkR/L8uxsLJmbzoRpInNmTUPPgPg2PxEsD/TizTmKU+gow1MaCQFqbLQ==
+"@lespantsfancy/lux@^0.3.39":
+  version "0.3.39"
+  resolved "https://registry.yarnpkg.com/@lespantsfancy/lux/-/lux-0.3.39.tgz#2e7e68ff635568be03c76e6da2159a34f6d4b72e"
+  integrity sha512-xsixXZgbFAiAjgKASQQtIM98DnF53/1c6QDr3FGr8dNyoV+yEpU084/FCyCj2YRX0r2tgkkZmSORWP/QqDquvQ==
   dependencies:
     node-fetch "^2.6.0"
     peerjs "^1.2.0"
