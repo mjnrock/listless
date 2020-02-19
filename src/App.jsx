@@ -53,17 +53,13 @@ export default class App extends Lux.React.ObserverComponent {
     }
 
     render() {
-        // const sprints = this.context.$().Timer.Sprints.reduce((a, v, i) => {
-        //     a.push({ [ i ]: v });
-
-        //     return a;
-        // }, []);
-
+        const sprints = Lux.Core.Helper.A2OA(this.context.$().Timer.Sprints, "value");
+        
         return (
             <View style={ styles.container }>
                 <View style={ styles.container }>
                     <FlatList
-                        data={ Lux.Core.Helper.A2OA(this.context.$().Timer.Sprints, "value") }
+                        data={ sprints }
                         renderItem={ ({ item }) => {
                             return <Text>{ item.value }</Text>;
                         }}
