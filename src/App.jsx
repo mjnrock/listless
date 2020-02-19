@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import Lux from "@lespantsfancy/lux";
 
 import Core from "./core/package";
@@ -32,37 +32,44 @@ export default class App extends Lux.React.ObserverComponent {
 
         // setInterval(() => this.forceUpdate(), 500);
 
-        // t1.StartTime();
-        // setTimeout(() => {
-        //     t1.StopTime();
-        //     t1.StartTime();
+        t1.StartTime();
+        setTimeout(() => {
+            t1.StopTime();
+            t1.StartTime();
 
-        //     setTimeout(() => {
-        //         t1.StopTime();
-        //         t1.StartTime();
+            setTimeout(() => {
+                t1.StopTime();
+                t1.StartTime();
                 
-        //         setTimeout(() => {
-        //             t1.StopTime();
-        //             t1.StartTime();
+                setTimeout(() => {
+                    t1.StopTime();
+                    t1.StartTime();
 
-        //             t1.BeginLoop();
-        //         }, 2000);
-        //     }, 1250);
-        // }, 750);
+                    t1.BeginLoop();
+                    console.log(this.context.$().Timer.Sprints);
+                }, 350);
+            }, 300);
+        }, 250);
     }
 
     render() {
+        // const sprints = this.context.$().Timer.Sprints.reduce((a, v, i) => {
+        //     a.push({ [ i ]: v });
+
+        //     return a;
+        // }, []);
+
         return (
             <View style={ styles.container }>
-                <Text style={ styles.task }>
-                    { Lux.Core.Helper.StringifyCyclic(this.context, 2) }
-                </Text>
-                <Text style={ styles.task }>
-                    { Lux.Core.Helper.StringifyCyclic(this.context.$(), 2) }
-                </Text>
-                <Text style={ styles.task }>
-                    { Lux.Core.Helper.StringifyCyclic(this.context.$().Timer, 2) }
-                </Text>
+                <View style={ styles.container }>
+                    <FlatList
+                        data={ Lux.Core.Helper.A2OA(this.context.$().Timer.Sprints, "value") }
+                        renderItem={ ({ item }) => {
+                            return <Text>{ item.value }</Text>;
+                        }}
+                    />
+                </View>
+
                 <Text style={ styles.task }>
                     { this.context.$().GetTotalTime(true) }
                 </Text>
