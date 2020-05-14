@@ -14,18 +14,15 @@ APP.use((req, res, next) => {
     next();
 });
 
-APP.get("/feed", (req, res) => {
-    // "/feed/:feedId"
-    // req.params.feedId
-    fs.readFile("./data/messages.json", function (err, buff) {
+APP.get("/tasks", (req, res) => {
+    fs.readFile("./data/tasks.json", function (err, buff) {
         return res.send(buff.toString());
     });
 });
-APP.post("/message/", (req, res) => {
-    const filepath = "./data/messages.json";
-    const message = req.body;
 
-    // console.log(message);
+APP.post("/task", (req, res) => {
+    const filepath = "./data/tasks.json";
+    const message = req.body;
 
     fs.readFile(filepath, "utf8", (err, data) => {
         if(err) {
@@ -43,5 +40,5 @@ APP.post("/message/", (req, res) => {
 });
 
 APP.listen(PORT, () =>
-    console.log(`Example app listening on port ${PORT}!`),
+    console.log(`Listless API is listening on port ${PORT}!`),
 );
